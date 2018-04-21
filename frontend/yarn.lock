@@ -5538,9 +5538,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-loading@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/react-loading/-/react-loading-0.1.4.tgz#b329ff2b870f1dc26c7068e91a1574f7dda27e67"
+react-loading@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-loading/-/react-loading-2.0.2.tgz#bc6d908fa316e1ccd677b7567792049a9bb4be0d"
 
 react-scripts@1.1.4:
   version "1.1.4"

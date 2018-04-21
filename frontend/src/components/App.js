@@ -32,7 +32,7 @@ class App extends Component {
 
   render() {
 
-    const { categories } = this.state
+    const { categories, loadingCategories } = this.state
 
     return (
       <div className="container">

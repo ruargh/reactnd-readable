@@ -3,6 +3,7 @@ import Loading from 'react-loading'
 import { getCategories } from '../utils/api'
 
 
+function Hi() { console.log('Hi')}
 
 class App extends Component {
   
@@ -21,18 +22,21 @@ class App extends Component {
           path: 'udacity'
         }
     ] */
-    categories: null,
-    loadingCategories: false
+    categories: null
   }
 
+
   componentDidMount() {
-    //getCategories().then((c) => this.setState(() => ({ categories: c.categories })))
     getCategories().then((c) => this.setState(() => ({ categories: c })))
+    Hi()
   }
+
 
   render() {
 
     const { categories, loadingCategories } = this.state
+
+    function Hi() { console.log('Hi')}
 
     return (
       <div className="container">
@@ -42,14 +46,13 @@ class App extends Component {
           <h2 className="subheader">React Blog</h2>
           <div>
 
-
-        <ul className='category-list'>
-          {categories.map((category) => (
-            <li key={category} className='subheader'>
-              {category}
-            </li>
-          ))}
-        </ul>
+{/*           <ul className='category-list'>
+            {categories.map((category) => (
+              <li key={category} className='subheader'>
+                {category}
+              </li>
+            ))}
+          </ul> */}
 
           </div>
         </div>

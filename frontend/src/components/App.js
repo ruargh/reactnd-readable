@@ -7,10 +7,11 @@ import { loadCategories } from '../actions'
 
 class App extends Component {
 
+  componentWillMount() {
+    this.props.loadCategories()
+  }
 
   render() {
-
-    const { categories, loadingCategories } = this.state
 
     return (
       <div className="container">
@@ -35,4 +36,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  loadCategories: () => dispatch(loadCategories()),
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App)

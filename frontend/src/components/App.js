@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import { loadCategories } from '../actions'
+import { CategoryMenu } from './CategoryMenu'
 
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
         <div className="nav">
           <h1 className="header">Readable</h1>
           <h2 className="subheader">React Blog</h2>
-          <div>
+          < CategoryMenu />
 
 {/*           <ul className='category-list'>
             {categories.map((category) => (
@@ -31,8 +32,7 @@ class App extends Component {
 
           </div>
         </div>
-      </div>
-    );
+    )
   }
 }
 

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Loading from 'react-loading'
 import { getCategories } from '../utils/api'
 
-
-function Hi() { console.log('Hi')}
-
 class App extends Component {
   
   state = {
@@ -27,16 +24,12 @@ class App extends Component {
 
 
   componentDidMount() {
-    getCategories().then((c) => this.setState(() => ({ categories: c })))
-    Hi()
   }
 
 
   render() {
 
     const { categories, loadingCategories } = this.state
-
-    function Hi() { console.log('Hi')}
 
     return (
       <div className="container">

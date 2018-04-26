@@ -36,6 +36,10 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  loadCategories : PropTypes.func.isRequired,
+}
+
 const mapDispatchToProps = dispatch => ({
   loadCategories: () => dispatch(loadCategories()),
 })

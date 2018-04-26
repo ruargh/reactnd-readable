@@ -6,31 +6,41 @@ import {
     loadCategoriesLoading,
     loadCategoriesError,
 } from '../selectors/categoriesSelectors'
+import Loading from './Loading';
 
-export const CategoryMenu = ({ categories, categoriesLoading, categoriesError }) => {
+export const CategoryMenu = ({ sCategories, categoriesLoading, categoriesError }) => {
     if (categoriesLoading) {
-        return ("Loading")
+    return <Loading />
     }
 
     if (categoriesError) {
-        return ("error")
+        return ( <div>Error</div> )
     }
 
     return (
-        {categories}
-    )
 
+        <div>
+        <ul>
+         {sCategories.map(category => (
+            <li key={category.id}>
+              <span>-</span>
+                {category.name}
+            </li>
+        ))}
+        </ul>
+        </div>
+    )
 }
 
 
-CategoryMenu.PropTypes = {
+CategoryMenu.propTypes = {
     categories: PropTypes.array.isRequired,
     categoriesLoading: PropTypes.bool.isRequired,
     categoriesError: PropTypes.bool.isRequired,
 }
 
 const mapStateToProps = state => ({
-    categories: loadCategories(state),
+    sCategories: loadCategories(state),
     categoriesError: loadCategoriesError(state),
     categoriesLoading: loadCategoriesLoading(state),
 })

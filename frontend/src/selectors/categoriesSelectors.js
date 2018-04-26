@@ -6,6 +6,12 @@ export const loadCategories = ({ categories }) => {
         return []
     }
 
-    return categories
-    
+    return Object.keys(categories)
+    .filter(key => key !== 'status')
+    .map(key => ({
+      id: key,
+      name: categories[key].name,
+      path: categories[key].path,
+    }))
+
 }

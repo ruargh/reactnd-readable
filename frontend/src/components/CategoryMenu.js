@@ -7,7 +7,7 @@ import {
     loadCategoriesError,
 } from '../selectors/categoriesSelectors'
 
-const CategoryMenu = ({ categories, categoriesLoading, categoriesError }) => {
+export const CategoryMenu = ({ categories, categoriesLoading, categoriesError }) => {
     if (categoriesLoading) {
         return ("Loading")
     }
@@ -35,4 +35,4 @@ const mapStateToProps = state => ({
     categoriesLoading: loadCategoriesLoading(state),
 })
 
-export default connect(mapStateToProps)(CategoryMenu);
+export default connect(mapStateToProps)(CategoryMenu)

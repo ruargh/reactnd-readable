@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
-import Loading from 'react-loading'
-import { getCategories } from '../utils/api'
+import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { loadCategories } from '../actions'
+
 
 class App extends Component {
-  
-  state = {
-/*     categories: [
-        {
-          name: 'react',
-          path: 'react'
-        },
-        {
-          name: 'redux',
-          path: 'redux'
-        },
-        {
-          name: 'udacity',
-          path: 'udacity'
-        }
-    ] */
-    categories: null
-  }
-
-
-  componentDidMount() {
-  }
 
 
   render() {

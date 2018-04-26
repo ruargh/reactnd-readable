@@ -1,13 +1,28 @@
+import { getCategories } from '../utils/api'
+
+export const SUCCESS_LOAD_CATEGORIES = 'SUCESS_LOAD_CATEGORIES'
+export const FAIL_LOAD_CATEGORIES = 'FAIL_LOAD_CATEGORIES'
+
+/*
 export const GET_CATEGORIES = 'GET_CATEGORIES'
 export const GET_ALL_POSTS = 'GET_ALL_POSTS'
 export const SORT_LIST = 'SORT_LIST'
 export const ADD_POST = 'ADD_POST'
+*/
 
-export function getCategories () {
-    return {
-        type: GET_CATEGORIES
-    } 
-}
+export const retrieveCategories = categories => ({
+    type: SUCCESS_LOAD_CATEGORIES,
+    categories,
+})
+
+export const failRetreiveCategories = () => ({
+    type: FAIL_LOAD_CATEGORIES,
+})
+
+export const loadCategories = () => dispatch =>
+    getCategories()
+        .then(categories => dispatch(retrieveCategories(categories)))
+        .catch(error => dispatch(failRetreiveCategories(error)))
 
 
 /*

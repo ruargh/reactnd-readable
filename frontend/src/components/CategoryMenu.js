@@ -14,15 +14,30 @@ export const CategoryMenu = ({ sCategories, categoriesLoading, categoriesError }
     }
 
     if (categoriesError) {
-        return ( <div>Error</div> )
+        return (
+
+            <div>
+            <ul>
+                <li>
+                  <span>-</span>
+                  Home
+                </li>
+            </ul>
+            </div>
+        )
     }
 
     return (
 
+
         <div>
         <ul>
-         {sCategories.map(category => (
-            <li key={category.id}>
+            <li>
+                <span>-</span>
+                Home
+            </li>
+            {sCategories.map( (category, index) => (
+            <li key={index}>
               <span>-</span>
                 {category.name}
             </li>
@@ -34,7 +49,7 @@ export const CategoryMenu = ({ sCategories, categoriesLoading, categoriesError }
 
 
 CategoryMenu.propTypes = {
-    categories: PropTypes.array.isRequired,
+    sCategories: PropTypes.array.isRequired,
     categoriesLoading: PropTypes.bool.isRequired,
     categoriesError: PropTypes.bool.isRequired,
 }

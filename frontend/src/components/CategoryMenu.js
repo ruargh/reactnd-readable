@@ -8,7 +8,12 @@ import {
 } from '../selectors/categoriesSelectors'
 import Loading from './Loading';
 
-export const CategoryMenu = ({ sCategories, categoriesLoading, categoriesError }) => {
+let sCategories = [ {name: "react", path: "react"},
+{name: "redux", path: "redux"},
+{name: "udacity", path: "udacity"}
+]
+
+export const CategoryMenu = ({ sCategories2, categoriesLoading, categoriesError }) => {
     if (categoriesLoading) {
     return <Loading />
     }
@@ -49,7 +54,7 @@ export const CategoryMenu = ({ sCategories, categoriesLoading, categoriesError }
 
 
 CategoryMenu.propTypes = {
-    sCategories: PropTypes.array.isRequired,
+    sCategories2: PropTypes.array.isRequired,
     categoriesLoading: PropTypes.bool.isRequired,
     categoriesError: PropTypes.bool.isRequired,
 }

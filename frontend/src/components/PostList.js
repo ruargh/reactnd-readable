@@ -7,7 +7,12 @@ const PostList = ({ posts, deletePost }) => (
       <Post
         key={post.id}
         {...post}
-        onClick={() => deletePost(post.id)}
+        onClick={() =>
+          {
+          console.log(post.id)
+          deletePost(post.id)
+          }
+        }
       />
     )}
   </ul>

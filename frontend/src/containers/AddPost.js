@@ -10,7 +10,7 @@ const AddPost = ({ dispatch }) => {
       <form
         onSubmit={e => {
           e.preventDefault()
-          if (!title.value.trim()) {
+          if (!title.value.trim() || category.value === "")  {
             return
           }
           dispatch(addPost(title.value, body.value, author.value, category.value))
@@ -22,9 +22,10 @@ const AddPost = ({ dispatch }) => {
       >
         <span>Add Post</span>
         <input ref={node => title = node} placeholder="Title"/>
-        <input ref={node => body = node} placeholder="Body" />
+        <textarea ref={node => body = node} placeholder="Body" ></textarea>
         <input ref={node => author = node} placeholder="Author" />
-        <select ref={node => category = node} defaultValue="React" >
+        <select ref={node => category = node} defaultValue="" >
+          <option value="" hidden disabled >Select Category</option>
           <option value="React">React</option>
           <option value="React">Redux</option>
           <option value="React">Udacity</option>

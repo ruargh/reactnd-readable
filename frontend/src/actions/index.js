@@ -20,6 +20,7 @@ export const addPost = (title, body, author, category) => {
 }
 
 export const deletePost = (id) => {
+    console.log('delete post:' + id);
     return {
         type: DELETE_POST,
         id

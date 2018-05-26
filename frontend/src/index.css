@@ -25,3 +25,8 @@ body {
   margin: 5px 0px;
   width: 100%;
 }
+.add-post-form textarea {
+  min-width: 125px;
+  max-width: 125px;
+  min-height: 13px;
+}

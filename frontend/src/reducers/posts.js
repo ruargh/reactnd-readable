@@ -9,7 +9,7 @@ const posts = (state = [], action) => {
             body: action.body,
             author: action.author,
             category: action.category,
-            timestamp: '2018-01-01 12:00',
+            timestamp: '1527357672',
             voteScore:1,
             deleted:false
           }

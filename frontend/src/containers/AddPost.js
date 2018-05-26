@@ -27,8 +27,8 @@ const AddPost = ({ dispatch }) => {
         <select ref={node => category = node} defaultValue="" >
           <option value="" hidden disabled >Select Category</option>
           <option value="React">React</option>
-          <option value="React">Redux</option>
-          <option value="React">Udacity</option>
+          <option value="Redux">Redux</option>
+          <option value="Udacity">Udacity</option>
         </select>
         <button type="submit">
           Save Post

@@ -21,7 +21,8 @@ const Post = ({
         <span className="post-meta-time" >{convertTime(timestamp)}</span>
         <span className="post-meta-category">{category}</span>
         <div className="post-block-vote">
-          <span>👍	Votes: {voteScore}</span>
+          <span><span role="img" aria-label="emoji">👍</span>	Votes: {voteScore}</span>
+          <span><span role="img" aria-label="emoji">💬</span> Comments: </span>
         </div>
       </div>
 

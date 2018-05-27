@@ -9,19 +9,16 @@ const PostList = ({ posts, deletePost, votePostUp, votePostDown }) => (
         {...post}
         onClick={() =>
           {
-          console.log(post.id)
           deletePost(post.id)
           }
         }
         votePostUp={() => 
           {
-          console.log('VoteUp!')
           votePostUp(post.id)
           }
         }
         votePostDown={() => 
           {
-          console.log('VoteDown!')
           votePostDown(post.id)
           }
         }

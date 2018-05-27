@@ -22,7 +22,6 @@ export const addPost = (title, body, author, category) => {
 }
 
 export const deletePost = (id) => {
-    console.log('delete post:' + id);
     return {
         type: DELETE_POST,
         id
@@ -30,14 +29,12 @@ export const deletePost = (id) => {
 }
 
 export const votePostUp = (id) => {
-    console.log('vote up post:' + id);
     return {
         type: VOTE_POST_UP,
         id
     }
 }
 export const votePostDown = (id) => {
-    console.log('vote down post:' + id);
     return {
         type: VOTE_POST_DOWN,
         id

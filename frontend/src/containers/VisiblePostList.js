@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { deletePost } from '../actions'
+import { deletePost, votePostUp, votePostDown } from '../actions'
 import PostList from '../components/PostList'
 import { CategoryFilters } from '../actions'
 
@@ -23,7 +23,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  deletePost: id => dispatch(deletePost(id))
+  deletePost: id => dispatch(deletePost(id)),
+  votePostUp: id => dispatch(votePostUp(id)),
+  votePostDown: id => dispatch(votePostDown(id)),
 })
 
 export default connect(

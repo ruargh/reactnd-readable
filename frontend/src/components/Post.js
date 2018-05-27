@@ -4,6 +4,8 @@ import { convertTime } from '../utils/helpers'
 /* Emoji List: http://unicode.org/emoji/charts/full-emoji-list.html */
 
 const Post = ({
+    votePostUp,
+    votePostDown,
     onClick,
     deleted,
     timestamp,
@@ -21,9 +23,10 @@ const Post = ({
         <span className="post-meta-time" >{convertTime(timestamp)}</span>
         <span className="post-meta-category">{category}</span>
         <div className="post-block-vote">
-          <span>Votes: {voteScore} <span role="img" aria-label="emoji">👍</span><span role="img" aria-label="emoji">👎</span></span>
-          <span> Comments: <span role="img" aria-label="emoji">💬</span></span>
-          <span onClick={onClick} > Delete <span role="img" aria-label="emoji" >❌</span></span>
+          <span>Votes: {voteScore} <span className="cursor-pointer" role="img" aria-label="emoji" onClick={votePostUp} >👍</span>
+            <span className="cursor-pointer" role="img" aria-label="emoji" onClick={votePostDown} >👎</span></span>
+          <span className="cursor-pointer" > Comments: <span role="img" aria-label="emoji">💬</span></span>
+          <span className="cursor-pointer" onClick={onClick} > Delete <span role="img" aria-label="emoji" >❌</span></span>
         </div>
       </div>
 

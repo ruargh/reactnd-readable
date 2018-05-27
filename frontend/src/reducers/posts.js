@@ -20,6 +20,18 @@ const posts = (state = [], action) => {
             ? {...post, deleted: !post.deleted}
             : post
         )
+      case 'VOTE_POST_UP':
+        return state.map(post =>
+          (post.id === action.id)
+            ? {...post, voteScore: (post.voteScore + 1) }
+            : post
+        )
+      case 'VOTE_POST_DOWN':
+        return state.map(post =>
+          (post.id === action.id)
+            ? {...post, voteScore: (post.voteScore - 1) }
+            : post
+        )
       default:
         return state
     }

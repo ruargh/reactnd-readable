@@ -1,6 +1,8 @@
 export const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER';
 export const DELETE_POST = 'DELETE_POST';
 export const ADD_POST = 'ADD_POST';
+export const VOTE_POST_UP = 'VOTE_POST_UP';
+export const VOTE_POST_DOWN = 'VOTE_POST_DOWN';
 
 export const setCategoryFilter = (category) => {
     return {
@@ -26,6 +28,22 @@ export const deletePost = (id) => {
         id
     }
 }
+
+export const votePostUp = (id) => {
+    console.log('vote up post:' + id);
+    return {
+        type: VOTE_POST_UP,
+        id
+    }
+}
+export const votePostDown = (id) => {
+    console.log('vote down post:' + id);
+    return {
+        type: VOTE_POST_DOWN,
+        id
+    }
+}
+
 
 export const CategoryFilters = {
     SHOW_ALL: 'SHOW_ALL',

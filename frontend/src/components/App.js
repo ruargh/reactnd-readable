@@ -4,6 +4,9 @@ import CategoryList from './CategoryList'
 import AddPost from '../containers/AddPost'
 import VisiblePostList from '../containers/VisiblePostList'
 import { fetchPosts } from '../utils/api'
+//import { addPost } from '../actions'
+//import { connect } from 'react-redux'
+
 
 class App extends Component {
 
@@ -37,3 +40,4 @@ class App extends Component {
 }
 
 export default App;
+//export default connect()(App)

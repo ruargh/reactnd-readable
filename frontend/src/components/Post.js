@@ -1,6 +1,7 @@
 import React from 'react'
 import { convertTime } from '../utils/helpers' 
 
+/* Emoji List: http://unicode.org/emoji/charts/full-emoji-list.html */
 
 const Post = ({
     onClick,
@@ -21,8 +22,8 @@ const Post = ({
         <span className="post-meta-time" >{convertTime(timestamp)}</span>
         <span className="post-meta-category">{category}</span>
         <div className="post-block-vote">
-          <span><span role="img" aria-label="emoji">👍</span>	Votes: {voteScore}</span>
-          <span><span role="img" aria-label="emoji">💬</span> Comments: </span>
+          <span>Votes: {voteScore} <span role="img" aria-label="emoji">👍</span><span role="img" aria-label="emoji">👎</span></span>
+          <span> Comments: <span role="img" aria-label="emoji">💬</span></span>
         </div>
       </div>
 

@@ -9,7 +9,6 @@ const Post = ({
     timestamp,
     title, body, author, category, voteScore }) => (
   <div className="post-view"
-    onClick={onClick}
     style={ {
       textDecoration: deleted ? 'line-through' : 'none'
     }}
@@ -24,6 +23,7 @@ const Post = ({
         <div className="post-block-vote">
           <span>Votes: {voteScore} <span role="img" aria-label="emoji">👍</span><span role="img" aria-label="emoji">👎</span></span>
           <span> Comments: <span role="img" aria-label="emoji">💬</span></span>
+          <span onClick={onClick} > Delete <span role="img" aria-label="emoji" >❌</span></span>
         </div>
       </div>
 

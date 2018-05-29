@@ -4,8 +4,9 @@ import CategoryList from './CategoryList'
 import AddPost from '../containers/AddPost'
 import VisiblePostList from '../containers/VisiblePostList'
 import { fetchPosts } from '../utils/api'
-//import { addPost } from '../actions'
-//import { connect } from 'react-redux'
+import { addPost } from '../actions'
+import { connect } from 'react-redux'
+import Loading from 'react-loading'
 
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
     loadingPosts: false,
   }
 
-  componentDidMount() {
+  componentWillMount() {
 
     this.setState(() => ({ loadingPosts: true }))
 
@@ -25,6 +26,20 @@ class App extends Component {
         loadingPosts: false,
       })))
 
+
+  }
+
+  componentDidMount() {
+
+          /* Add dummy Post fo Formatting style sheets */
+        let  pTitle = "Title"
+        let  pBody = "Data";
+        let  pAuthor = "Matt Burns";
+        let  pCategory = "Udacity";
+        this.props.dispatch(addPost(pTitle, pBody, pAuthor, pCategory))
+          /* Add dummy Post fo Formatting style sheets - END */
+
+//this.props.dispatch(addPost('title', 'body', 'ruargh', 'React')) 
   }
 
   render() {
@@ -32,12 +47,15 @@ class App extends Component {
         <div>
           <CategoryList />
           <AddPost />
-          <VisiblePostList />
-            
+
+        {this.state.loadingPosts === true
+          ? <Loading delay={200} type='spin' color='#222' className='loading' />
+        : <VisiblePostList /> }
+          
         </div>
     );
   }
 }
 
-export default App;
-//export default connect()(App)
+//export default App;
+export default connect()(App)

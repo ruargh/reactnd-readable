@@ -16,31 +16,22 @@ class App extends Component {
     loadingPosts: false,
   }
 
-  componentWillMount() {
+
+
+  componentDidMount() {
 
     this.setState(() => ({ loadingPosts: true }))
 
     fetchPosts()
-      .then((apiPosts) => this.setState(() => ({
-        apiPosts,
-        loadingPosts: false,
-      })))
-
+    .then((apiPosts) => (
+      apiPosts.map( (post) => (   
+        this.props.dispatch(addPost(post.title, post.body, post.author, post.category))
+      ))
+    ))
+    .then( this.setState(() => ({loadingPosts: false,})))
 
   }
 
-  componentDidMount() {
-
-          /* Add dummy Post fo Formatting style sheets */
-        let  pTitle = "Title"
-        let  pBody = "Data";
-        let  pAuthor = "Matt Burns";
-        let  pCategory = "Udacity";
-        this.props.dispatch(addPost(pTitle, pBody, pAuthor, pCategory))
-          /* Add dummy Post fo Formatting style sheets - END */
-
-//this.props.dispatch(addPost('title', 'body', 'ruargh', 'React')) 
-  }
 
   render() {
     return (
@@ -57,5 +48,4 @@ class App extends Component {
   }
 }
 
-//export default App;
 export default connect()(App)

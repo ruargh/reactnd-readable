@@ -22,7 +22,7 @@ const AddPost = ({ dispatch }) => {
           pTitle = "The 9 features Amazon and Google must add to the Echo and Home";
           pBody = "The Amazon Echo and Google Home are amazing devices and both have advantages over the other. In my home, we use the Amazon Echo and have them around the house and outside. I have the original in the living room, a Dot in bedrooms, my office and outside, a Tap in my woodworking workshop and Spots in the kids’ room (with tape over the camera). They’re great devices, but far from perfect. They’re missing several key features and the Google Home is missing the same things, too I polled the TechCrunch staff. The following are the features we would like to see in the next generation of these devices If you’re on desktop, click the “start here” button to the right. If you’re on mobile web, just scroll down. If you are reading this from anywhere else (Google News, Yahoo, etc), click here to jump into the slideshow.";
           pAuthor = "Matt Burns";
-          pCategory = "Udacity";
+          pCategory = "udacity";
           dispatch(addPost(pTitle, pBody, pAuthor, pCategory))
           /* Add dummy Post fo Formatting style sheets - END */
 
@@ -39,9 +39,9 @@ const AddPost = ({ dispatch }) => {
         <input ref={node => author = node} placeholder="Author" />
         <select ref={node => category = node} defaultValue="" >
           <option value="" hidden disabled >Select Category</option>
-          <option value="React">React</option>
-          <option value="Redux">Redux</option>
-          <option value="Udacity">Udacity</option>
+          <option value="react">React</option>
+          <option value="redux">Redux</option>
+          <option value="udacity">Udacity</option>
         </select>
         <button type="submit">
           Save Post

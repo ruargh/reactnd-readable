@@ -8,11 +8,11 @@ const getVisiblePosts = (posts, category) => {
     case CategoryFilters.SHOW_ALL:
       return posts
     case CategoryFilters.SHOW_REACT:
-      return posts.filter(t => t.category === "React")
+      return posts.filter(t => t.category === "react")
     case CategoryFilters.SHOW_REDUX:
-      return posts.filter(t => t.category === "Redux")
+      return posts.filter(t => t.category === "redux")
     case CategoryFilters.SHOW_UDACITY:
-      return posts.filter(t => t.category === "Udacity")
+      return posts.filter(t => t.category === "udacity")
     default:
       throw new Error('Unknown Category: ' + category)
   }

@@ -1,4 +1,5 @@
 export function convertTime (time) {
-    let date = new Date(time*1000);
+    console.log(time)
+    let date = new Date(time)
     return date.toISOString().split('T')[0];
 }

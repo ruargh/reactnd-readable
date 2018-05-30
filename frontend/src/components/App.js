@@ -4,7 +4,7 @@ import CategoryList from './CategoryList'
 import AddPost from '../containers/AddPost'
 import VisiblePostList from '../containers/VisiblePostList'
 import { fetchPosts } from '../utils/api'
-import { addPost } from '../actions'
+import { loadPost } from '../actions'
 import { connect } from 'react-redux'
 import Loading from 'react-loading'
 
@@ -25,7 +25,7 @@ class App extends Component {
     fetchPosts()
     .then((apiPosts) => (
       apiPosts.map( (post) => (   
-        this.props.dispatch(addPost(post.title, post.body, post.author, post.category))
+        this.props.dispatch(loadPost(post.id, post.title, post.body, post.author, post.category, post.timestamp, post.voteScore, post.deleted, post.commentCount))
       ))
     ))
     .then( this.setState(() => ({loadingPosts: false,})))

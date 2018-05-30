@@ -1,3 +1,5 @@
+import { convertTime } from '../utils/helpers'
+
 const posts = (state = [], action) => {
     switch (action.type) {
       case 'ADD_POST':
@@ -9,9 +11,25 @@ const posts = (state = [], action) => {
             body: action.body,
             author: action.author,
             category: action.category,
-            timestamp: '1527357672',
+            timestamp: Date.now(),
             voteScore:1,
-            deleted:false
+            deleted:false,
+            commentCount: 0,
+          }
+        ]
+      case 'LOAD_POST':
+        return [
+          ...state,
+          {
+            id: action.id,
+            title: action.title,
+            body: action.body,
+            author: action.author,
+            category: action.category,
+            timestamp: convertTime(action.timestamp),
+            voteScore: action.voteScore,
+            deleted: action.deleted,
+            commentCount: action.commentCount
           }
         ]
       case 'DELETE_POST':

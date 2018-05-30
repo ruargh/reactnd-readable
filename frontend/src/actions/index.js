@@ -1,6 +1,7 @@
 export const SET_CATEGORY_FILTER = 'SET_CATEGORY_FILTER';
 export const DELETE_POST = 'DELETE_POST';
 export const ADD_POST = 'ADD_POST';
+export const LOAD_POST = 'LOAD_POST'
 export const VOTE_POST_UP = 'VOTE_POST_UP';
 export const VOTE_POST_DOWN = 'VOTE_POST_DOWN';
 
@@ -18,6 +19,13 @@ export const addPost = (title, body, author, category) => {
         type: ADD_POST,
         id: nextPostID++,
         title, body, author, category
+    }
+}
+
+export const loadPost = (id, title, body, author, category, timestamp, voteScore, deleted, commentCount) => {
+    return {
+        type: LOAD_POST,
+        id, title, body, author, category, timestamp, voteScore, deleted, commentCount
     }
 }
 

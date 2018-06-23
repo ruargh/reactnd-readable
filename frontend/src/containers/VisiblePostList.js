@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { deletePost, votePostUp, votePostDown } from '../actions'
 import PostList from '../components/PostList'
 import { CategoryFilters } from '../actions'
+import sortBy from 'sort-by'
 
 const getVisiblePosts = (posts, category) => {
   switch (category) {
@@ -19,7 +20,7 @@ const getVisiblePosts = (posts, category) => {
 }
 
 const mapStateToProps = state => ({
-  posts: getVisiblePosts(state.posts, state.categoryFilter)
+  posts: getVisiblePosts(state.posts, state.categoryFilter).sort(sortBy('-voteScore', 'title'))
 })
 
 const mapDispatchToProps = dispatch => ({

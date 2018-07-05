@@ -5,10 +5,10 @@ body {
   background-color: rgba(0,255,0,0.05);
 }
 
-.category-list {
+.button-list {
   margin: 15px 50px;
 }
-.category-list button {
+.button-list button {
   margin-left: 4px;
 }
 

@@ -67,5 +67,4 @@ export const CategoryFilters = {
 export const SortByOptions = {
     TIMESTAMP: '-timestamp',
     VOTE_SCORE: '-voteScore',
-    TITLE: 'title',
   }

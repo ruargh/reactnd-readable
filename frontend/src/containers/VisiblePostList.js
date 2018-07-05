@@ -21,7 +21,7 @@ const getVisiblePosts = (posts, category, sortOption) => {
 }
 
 const mapStateToProps = state => ({
-  posts: getVisiblePosts(state.posts, state.categoryFilter, state.sortByOption).sort(sortBy(state.sortByOption))
+  posts: getVisiblePosts(state.posts, state.categoryFilter, state.sortByOption)
 })
 
 const mapDispatchToProps = dispatch => ({

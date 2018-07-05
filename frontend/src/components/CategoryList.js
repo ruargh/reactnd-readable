@@ -3,7 +3,7 @@ import FilterLink from '../containers/FilterLink'
 import { CategoryFilters } from '../actions'
 
 const CategoryList = () => (
-  <div className="category-list">
+  <div className="button-list">
     <span>Categories: </span>
     <FilterLink category={CategoryFilters.SHOW_ALL}>
       All

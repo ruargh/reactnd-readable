@@ -5,10 +5,7 @@ import { addPost } from '../actions'
 
 const AddPost = ({ dispatch }) => {
   let title, body, author, category
-
-  let pTitle, pBody, pAuthor, pCategory
-
-
+  
   return (
     <div className="add-post-form">
       <form

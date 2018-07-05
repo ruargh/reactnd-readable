@@ -1,6 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
 import CategoryList from './CategoryList'
+import SortByList from './SortByList'
 import AddPost from '../containers/AddPost'
 import VisiblePostList from '../containers/VisiblePostList'
 import { fetchPosts } from '../utils/api'
@@ -37,6 +38,7 @@ class App extends Component {
     return (
         <div>
           <CategoryList />
+          <SortByList />
           <AddPost />
 
         {this.state.loadingPosts === true

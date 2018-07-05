@@ -4,6 +4,14 @@ export const ADD_POST = 'ADD_POST';
 export const LOAD_POST = 'LOAD_POST'
 export const VOTE_POST_UP = 'VOTE_POST_UP';
 export const VOTE_POST_DOWN = 'VOTE_POST_DOWN';
+export const SET_SORT_OPTION = 'SET_SORT_OPTION';
+
+export const setSortByOption = (sortOption) => {
+    return {
+        type: 'SET_SORT_OPTION',
+        sortOption
+    }
+}
 
 export const setCategoryFilter = (category) => {
     return {
@@ -11,7 +19,6 @@ export const setCategoryFilter = (category) => {
         category
     }
 }
-
 
 let nextPostID = 0
 export const addPost = (title, body, author, category) => {
@@ -55,4 +62,10 @@ export const CategoryFilters = {
     SHOW_REACT: 'SHOW_REACT',
     SHOW_REDUX: 'SHOW_REDUX',
     SHOW_UDACITY: 'SHOW_UDACITY'
+  }
+
+export const SortByOptions = {
+    TIMESTAMP: '-timestamp',
+    VOTE_SCORE: '-voteScore',
+    TITLE: 'title',
   }

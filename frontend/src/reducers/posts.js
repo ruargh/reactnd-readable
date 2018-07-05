@@ -26,7 +26,8 @@ const posts = (state = [], action) => {
             body: action.body,
             author: action.author,
             category: action.category,
-            timestamp: convertTime(action.timestamp),
+            //timestamp: convertTime(action.timestamp),
+            timestamp: action.timestamp,
             voteScore: action.voteScore,
             deleted: action.deleted,
             commentCount: action.commentCount

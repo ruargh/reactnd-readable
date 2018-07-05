@@ -8,6 +8,9 @@ body {
 .category-list {
   margin: 15px 50px;
 }
+.category-list button {
+  margin-left: 4px;
+}
 
 .add-post-form {
   float: right;

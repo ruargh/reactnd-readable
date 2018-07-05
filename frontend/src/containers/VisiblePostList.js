@@ -4,23 +4,24 @@ import PostList from '../components/PostList'
 import { CategoryFilters } from '../actions'
 import sortBy from 'sort-by'
 
-const getVisiblePosts = (posts, category) => {
+
+const getVisiblePosts = (posts, category, sortOption) => {
   switch (category) {
     case CategoryFilters.SHOW_ALL:
-      return posts
+      return posts.sort(sortBy(sortOption))
     case CategoryFilters.SHOW_REACT:
-      return posts.filter(t => t.category === "react")
+      return posts.filter(t => t.category === "react").sort(sortBy(sortOption))
     case CategoryFilters.SHOW_REDUX:
-      return posts.filter(t => t.category === "redux")
+      return posts.filter(t => t.category === "redux").sort(sortBy(sortOption))
     case CategoryFilters.SHOW_UDACITY:
-      return posts.filter(t => t.category === "udacity")
+      return posts.filter(t => t.category === "udacity").sort(sortBy(sortOption))
     default:
       throw new Error('Unknown Category: ' + category)
   }
 }
 
 const mapStateToProps = state => ({
-  posts: getVisiblePosts(state.posts, state.categoryFilter).sort(sortBy('-voteScore', 'title'))
+  posts: getVisiblePosts(state.posts, state.categoryFilter, state.sortByOption).sort(sortBy(state.sortByOption))
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -24,7 +24,18 @@ const defaultData = {
     voteScore: -5,
     deleted: false,
     commentCount: 0
-  }
+  },
+  "0006ok3ym7mf1p33l000": {
+    id: '0006ok3ym7mf1p33l000',
+    timestamp: 1508479767190,
+    title: 'The 9 features Amazon and Google must add to the Echo and Home',
+    body: 'The Amazon Echo and Google Home are amazing devices and both have advantages over the other. In my home, we use the Amazon Echo and have them around the house and outside. I have the original in the living room, a Dot in bedrooms, my office and outside, a Tap in my woodworking workshop and Spots in the kids’ room (with tape over the camera). They’re great devices, but far from perfect. They’re missing several key features and the Google Home is missing the same things, too I polled the TechCrunch staff. The following are the features we would like to see in the next generation of these devices If you’re on desktop, click the “start here” button to the right. If you’re on mobile web, just scroll down. If you are reading this from anywhere else (Google News, Yahoo, etc), click here to jump into the slideshow.',
+    author: 'Matt Burns',
+    category: 'udacity',
+    voteScore: 3,
+    deleted: false,
+    commentCount: 0
+  },
 }
 
 function getData (token) {

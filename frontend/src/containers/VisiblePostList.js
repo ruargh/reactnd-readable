@@ -7,13 +7,13 @@ import sortBy from 'sort-by'
 const getVisiblePosts = (posts, category, sortOption) => {
   switch (category) {
     case CategoryFilters.SHOW_ALL:
-      return posts.sort(sortBy(sortOption))
+      return posts.filter( d => d.deleted === false).sort(sortBy(sortOption))
     case CategoryFilters.SHOW_REACT:
-      return posts.filter(t => t.category === "react").sort(sortBy(sortOption))
+      return posts.filter(t => t.category === "react").filter( d => d.deleted === false).sort(sortBy(sortOption))
     case CategoryFilters.SHOW_REDUX:
-      return posts.filter(t => t.category === "redux").sort(sortBy(sortOption))
+      return posts.filter(t => t.category === "redux").filter( d => d.deleted === false).sort(sortBy(sortOption))
     case CategoryFilters.SHOW_UDACITY:
-      return posts.filter(t => t.category === "udacity").sort(sortBy(sortOption))
+      return posts.filter(t => t.category === "udacity").filter( d => d.deleted === false).sort(sortBy(sortOption))
     default:
       throw new Error('Unknown Category: ' + category)
   }

@@ -4,7 +4,6 @@ import PostList from '../components/PostList'
 import { CategoryFilters } from '../actions'
 import sortBy from 'sort-by'
 
-
 const getVisiblePosts = (posts, category, sortOption) => {
   switch (category) {
     case CategoryFilters.SHOW_ALL:

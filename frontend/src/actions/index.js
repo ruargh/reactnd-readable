@@ -20,11 +20,9 @@ export const setCategoryFilter = (category) => {
     }
 }
 
-let nextPostID = 0
 export const addPost = (title, body, author, category) => {
     return {
         type: ADD_POST,
-        id: nextPostID++,
         title, body, author, category
     }
 }

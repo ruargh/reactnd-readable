@@ -1,4 +1,6 @@
 //import { convertTime } from '../utils/helpers'
+import { getUuid } from '../utils/helpers'
+
 
 const posts = (state = [], action) => {
     switch (action.type) {
@@ -6,7 +8,7 @@ const posts = (state = [], action) => {
         return [
           ...state,
           {
-            id: action.id,
+            id: getUuid(),
             title: action.title,
             body: action.body,
             author: action.author,

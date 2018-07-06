@@ -9,7 +9,7 @@ const Post = ({
     onClick,
     deleted,
     timestamp,
-    title, body, author, category, voteScore }) => (
+    title, body, author, category, voteScore, commentCount }) => (
   <div className="post-view"
     style={ {
       textDecoration: deleted ? 'line-through' : 'none'
@@ -25,7 +25,7 @@ const Post = ({
         <div className="post-block-vote">
           <span>Votes: {voteScore} <span className="cursor-pointer" role="img" aria-label="emoji" onClick={votePostUp} >👍</span>
             <span className="cursor-pointer" role="img" aria-label="emoji" onClick={votePostDown} >👎</span></span>
-          <span className="cursor-pointer" > Comments: <span role="img" aria-label="emoji">💬</span></span>
+          <span className="cursor-pointer" > Comments: {commentCount} <span role="img" aria-label="emoji">💬</span></span>
           <span className="cursor-pointer" onClick={onClick} > Delete <span role="img" aria-label="emoji" >❌</span></span>
         </div>
       </div>

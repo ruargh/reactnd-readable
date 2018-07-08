@@ -17,6 +17,4 @@ This repository includes the code for the backend API Server.
     - `npm install`
     - `npm start`
 
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
